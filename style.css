@@ -1,117 +1,165 @@
 @import "tailwindcss";
 
-/* style.css */
+/* style.css - Luminous Aurora Theme */
 :root {
-    --primary: #818cf8;
-    --primary-glow: rgba(129, 140, 248, 0.3);
-    --bg-main: #0a0a0c;
-    --card-bg: rgba(17, 17, 24, 0.8);
-    --border-glow: rgba(129, 140, 248, 0.15);
+    --bg-deep: #050508;
+    --aurora-1: #4f46e5;
+    --aurora-2: #c026d3;
+    --aurora-3: #06b6d4;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: #f1f5f9;
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
     overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Floating Blobs Animation */
-.blob {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: linear-gradient(135deg, rgba(129, 140, 248, 0.08) 0%, rgba(192, 38, 211, 0.08) 100%);
-    filter: blur(100px);
-    border-radius: 50%;
+/* Atmospheric Aurora Background */
+.aurora-container {
+    position: fixed;
+    inset: 0;
     z-index: -1;
-    animation: move 25s infinite alternate;
+    overflow: hidden;
+    filter: blur(100px);
 }
 
-@keyframes move {
-    from { transform: translate(-15%, -15%) rotate(0deg); }
-    to { transform: translate(15%, 15%) rotate(360deg); }
+.aurora-light {
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: drift 20s infinite alternate ease-in-out;
 }
 
-.glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+@keyframes drift {
+    0% { transform: translate(-10%, -10%) scale(1); }
+    100% { transform: translate(20%, 20%) scale(1.2); }
 }
 
-.glass-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--border-glow);
-    box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.6), 0 0 20px -5px var(--border-glow);
+/* Premium Luminous Card */
+.luminous-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    width: 100%;
+    max-width: 480px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.luminous-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 
+        0 50px 100px -20px rgba(0, 0, 0, 0.6),
+        0 0 40px -10px rgba(79, 70, 229, 0.2);
+}
+
+/* Elegant Inputs */
 .input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #94a3b8;
+    margin-bottom: 0.75rem;
+    margin-left: 1rem;
+}
+
+.input-container {
     position: relative;
-    transition: all 0.3s;
+    display: flex;
+    align-items: center;
 }
 
 .input-field {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.875rem 1rem 0.875rem 3rem;
-    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.125rem 1.25rem 1.125rem 3.5rem;
+    border-radius: 24px;
     color: white;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    transition: all 0.4s;
+    outline: none;
 }
 
 .input-field:focus {
-    outline: none;
     background: rgba(255, 255, 255, 0.05);
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+    border-color: var(--aurora-1);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
 }
 
 .input-icon {
     position: absolute;
-    left: 1.125rem;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 1.25rem;
     color: #64748b;
     transition: all 0.3s;
+    pointer-events: none;
 }
 
 .input-field:focus + .input-icon {
-    color: var(--primary);
-    transform: translateY(-50%) scale(1.1);
+    color: var(--aurora-1);
+    transform: scale(1.1);
 }
 
-.glow-button {
-    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+/* Aurora Button */
+.aurora-btn {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, var(--aurora-1) 0%, var(--aurora-2) 100%);
+    border-radius: 24px;
     color: white;
-    font-weight: 800;
-    padding: 1rem;
-    border-radius: 16px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 25px -5px var(--primary-glow);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
 }
 
-.glow-button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 20px 40px -8px var(--primary-glow);
+.aurora-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.5);
     filter: brightness(1.1);
 }
 
-.animate-in {
-    animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1);
+.aurora-btn:active {
+    transform: scale(0.98);
 }
+
+/* Layout Classes */
+.hidden { display: none; }
+.reveal { animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
 @keyframes reveal {
-    from { opacity: 0; transform: translateY(40px); filter: blur(15px); }
-    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-#toast.success .glass-card { border-left: 4px solid #10b981; }
-#toast.error .glass-card { border-left: 4px solid #f43f5e; }
-
-select.input-field option {
-    background: #111118;
-    color: white;
+/* Notification */
+#toast .luminous-card {
+    padding: 1.25rem 2rem;
+    border-radius: 20px;
+    max-width: 320px;
 }

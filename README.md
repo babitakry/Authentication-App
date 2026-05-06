@@ -1,25 +1,25 @@
-# 🌌 NexusAuth | Midnight Premium Authentication
+# ✨ Aurora Identity | Luminous Authentication Portal
 
-NexusAuth is a cutting-edge, high-performance authentication interface built with **Vanilla HTML, Tailwind CSS, and Modular JavaScript**. It features a stunning "Midnight Obsidian" dark theme with advanced glassmorphism, animated background elements, and a robust security architecture.
+Aurora Identity is a high-end, high-performance authentication application built with **Vanilla HTML, Tailwind CSS, and Modular JavaScript**. It features a stunning "Luminous Aurora" theme with deep atmospheric lighting, organic glassmorphism, and a robust security architecture.
 
-🚀 **Live Deployment:** [authentication-app-babita.vercel.app](https://authentication-app-babita.vercel.app/)
-📊 **Vercel Project:** [View Dashboard](https://vercel.com/babita1947s-projects/authentication-app)
+🚀 **Live Deployment:** [authentication-app-tan-delta.vercel.app](https://authentication-app-tan-delta.vercel.app/)
 
 ---
 
 ## ✨ Features
 
-- **🌑 Midnight Premium UI**: A deep, sophisticated dark theme optimized for modern displays.
+- **🎨 Luminous Aurora UI**: A dreamy, atmospheric design with pulsing aurora lights and thick frosted glass.
 - **🛡️ Secure Auth Flow**: Full implementation of Login, Registration, and Session Management using **FreeAPI**.
-- **🧩 Modular Architecture**: Cleanly separated logic into `api`, `ui`, and `auth` modules for maximum maintainability.
-- **✨ Advanced Animations**: Floating ambient blobs, micro-interactions on inputs, and smooth "reveal" transitions.
+- **🧩 Modular Architecture**: Logic separated into `api`, `ui`, and `auth` modules for peak maintainability.
+- **🖋️ Premium Typography**: Powered by **Plus Jakarta Sans** for a modern, high-fashion SaaS feel.
 - **📱 Ultra-Responsive**: Pixel-perfect layout across all devices, from mobile to ultra-wide monitors.
 - **⚡ Performance Optimized**: Zero framework overhead—powered by lightning-fast Vanilla JS and Vite.
 
 ## 🛠️ Technology Stack
 
 - **Frontend**: Vanilla HTML5, JavaScript (ES Modules)
-- **Styling**: Tailwind CSS v4 (Integrated with Vite)
+- **Styling**: Tailwind CSS v4
+- **Typography**: Plus Jakarta Sans (Google Fonts)
 - **Tooling**: Vite (Dev Server & Bundler)
 - **API**: [FreeAPI](https://freeapi.app) (Authentication Module)
 
@@ -33,7 +33,7 @@ NexusAuth is a cutting-edge, high-performance authentication interface built wit
 │   └── auth.js      # Authentication state management
 ├── main.js          # App entry point & event listeners
 ├── index.html       # Main UI structure
-├── style.css        # Custom design tokens & animations
+├── style.css        # Luminous Aurora design tokens
 └── vite.config.js   # Dev server & API proxy configuration
 ```
 

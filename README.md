@@ -1,21 +1,21 @@
-# ✨ Aurora Identity | Luminous Authentication Portal
+# Aurora Identity | Luminous Authentication Portal
 
-Aurora Identity is a high-end, high-performance authentication application built with **Vanilla HTML, Tailwind CSS, and Modular JavaScript**. It features a stunning "Luminous Aurora" theme with deep atmospheric lighting, organic glassmorphism, and a robust security architecture.
+Aurora Identity is a high-end, high-performance authentication application built with Vanilla HTML, Tailwind CSS, and Modular JavaScript. It features a stunning "Luminous Aurora" theme with deep atmospheric lighting, organic glassmorphism, and a robust security architecture.
 
-🚀 **Live Deployment:** [authentication-app-tan-delta.vercel.app](https://authentication-app-tan-delta.vercel.app/)
+Live Deployment: [authentication-app-tan-delta.vercel.app](https://authentication-app-tan-delta.vercel.app/)
 
 ---
 
-## ✨ Features
+## Features
 
-- **🎨 Luminous Aurora UI**: A dreamy, atmospheric design with pulsing aurora lights and thick frosted glass.
-- **🛡️ Secure Auth Flow**: Full implementation of Login, Registration, and Session Management using **FreeAPI**.
-- **🧩 Modular Architecture**: Logic separated into `api`, `ui`, and `auth` modules for peak maintainability.
-- **🖋️ Premium Typography**: Powered by **Plus Jakarta Sans** for a modern, high-fashion SaaS feel.
-- **📱 Ultra-Responsive**: Pixel-perfect layout across all devices, from mobile to ultra-wide monitors.
-- **⚡ Performance Optimized**: Zero framework overhead—powered by lightning-fast Vanilla JS and Vite.
+- **Luminous Aurora UI**: A dreamy, atmospheric design with pulsing aurora lights and thick frosted glass.
+- **Secure Auth Flow**: Full implementation of Login, Registration, and Session Management using FreeAPI.
+- **Modular Architecture**: Logic separated into api, ui, and auth modules for peak maintainability.
+- **Premium Typography**: Powered by Plus Jakarta Sans for a modern, high-fashion SaaS feel.
+- **Ultra-Responsive**: Pixel-perfect layout across all devices, from mobile to ultra-wide monitors.
+- **Performance Optimized**: Zero framework overhead—powered by lightning-fast Vanilla JS and Vite.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend**: Vanilla HTML5, JavaScript (ES Modules)
 - **Styling**: Tailwind CSS v4
@@ -23,7 +23,7 @@ Aurora Identity is a high-end, high-performance authentication application built
 - **Tooling**: Vite (Dev Server & Bundler)
 - **API**: [FreeAPI](https://freeapi.app) (Authentication Module)
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 /
@@ -37,7 +37,7 @@ Aurora Identity is a high-end, high-performance authentication application built
 └── vite.config.js   # Dev server & API proxy configuration
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v18 or higher)
@@ -54,9 +54,9 @@ Aurora Identity is a high-end, high-performance authentication application built
    npm run dev
    ```
 
-## 🔑 Authentication Logic
-The app uses **Bearer Token** authentication. Tokens are stored securely in `localStorage`, and the app automatically synchronizes your session on page reload to ensure a seamless user experience.
+## Authentication Logic
+The app uses Bearer Token authentication. Tokens are stored securely in localStorage, and the app automatically synchronizes your session on page reload to ensure a seamless user experience.
 
 ---
 
-Built with 💜 by [Babita Kumari]
+Built with passion by Babita Kumari

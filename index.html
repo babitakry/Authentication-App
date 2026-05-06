@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusAuth | Premium Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0a0a0c] text-[#f1f5f9] font-['Outfit'] min-h-screen flex items-center justify-center p-4">
+    <!-- Animated Cyber Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div class="blob top-[-20%] left-[-10%] opacity-40"></div>
+        <div class="blob bottom-[-20%] right-[-10%] opacity-40" style="animation-delay: -7s; background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main id="app-container" class="w-full max-w-[1200px] flex items-center justify-center relative">
+        <!-- Toast Notification -->
+        <div id="toast" class="fixed top-6 right-6 z-[100] transform translate-x-[150%] transition-all duration-500 pointer-events-none">
+            <div class="glass-card px-6 py-4 rounded-2xl flex items-center gap-3 border-l-4 border-indigo-500 bg-[#111118]/90">
+                <span id="toast-icon"></span>
+                <p id="toast-message" class="font-bold text-white text-sm"></p>
+            </div>
+        </div>
+
+        <!-- Auth Section -->
+        <div id="auth-section" class="w-full max-w-md">
+            <!-- Login View -->
+            <div id="login-view" class="glass-card p-10 md:p-14 rounded-[48px] animate-in">
+                <div class="text-center mb-12">
+                    <div class="inline-block p-6 rounded-[28px] bg-indigo-500/10 text-indigo-400 mb-8 shadow-[0_0_30px_rgba(99,102,241,0.2)]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <h1 class="text-4xl font-black text-white tracking-tighter mb-3 uppercase">Secure Login</h1>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">Access your digital identity</p>
+                </div>
+
+                <form id="login-form" class="space-y-6">
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-indigo-400 uppercase tracking-widest mb-2.5 ml-2">Username</label>
+                        <input type="text" id="login-username" required class="input-field" placeholder="johndoe">
+                        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-indigo-400 uppercase tracking-widest mb-2.5 ml-2">Password</label>
+                        <input type="password" id="login-password" required class="input-field" placeholder="••••••••">
+                        <svg class="input-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <button type="submit" class="glow-button w-full mt-6">Authenticate Now</button>
+                </form>
+
+                <p class="text-center text-slate-500 mt-12 text-xs font-bold tracking-wide">
+                    NO ACCOUNT? <button onclick="toggleView('register')" class="text-indigo-400 hover:text-white transition-all underline underline-offset-8 decoration-indigo-500/30 hover:decoration-indigo-400">REGISTER HERE</button>
+                </p>
+            </div>
+
+            <!-- Register View -->
+            <div id="register-view" class="glass-card p-8 md:p-10 rounded-[40px] hidden animate-in">
+                <div class="text-center mb-8">
+                    <div class="inline-block p-4 rounded-[20px] bg-purple-500/10 text-purple-400 mb-4 shadow-[0_0_20px_rgba(168,85,247,0.1)]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+                    </div>
+                    <h1 class="text-3xl font-black text-white tracking-tighter mb-1 uppercase">Initialize</h1>
+                    <p class="text-slate-400 font-bold uppercase tracking-widest text-[10px]">New secure profile</p>
+                </div>
+
+                <form id="register-form" class="space-y-3">
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-purple-400 uppercase tracking-widest mb-1.5 ml-2">Username</label>
+                        <input type="text" id="reg-username" required class="input-field" placeholder="johndoe">
+                        <svg class="input-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-purple-400 uppercase tracking-widest mb-1.5 ml-2">Email</label>
+                        <input type="email" id="reg-email" required class="input-field" placeholder="john@example.com">
+                        <svg class="input-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-purple-400 uppercase tracking-widest mb-1.5 ml-2">Password</label>
+                        <input type="password" id="reg-password" required class="input-field" placeholder="••••••••">
+                        <svg class="input-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <div class="input-group">
+                        <label class="block text-[11px] font-black text-purple-400 uppercase tracking-widest mb-1.5 ml-2">Access Role</label>
+                        <select id="reg-role" class="input-field appearance-none cursor-pointer">
+                            <option value="USER">User</option>
+                            <option value="ADMIN">Administrator</option>
+                        </select>
+                        <svg class="input-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    </div>
+                    <button type="submit" class="glow-button w-full mt-2" style="background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%); padding: 0.75rem;">Initialize Account</button>
+                </form>
+
+                <p class="text-center text-slate-500 mt-8 text-[10px] font-bold tracking-wide">
+                    MEMBER? <button onclick="toggleView('login')" class="text-purple-400 hover:text-white transition-all underline underline-offset-8 decoration-purple-500/30 hover:decoration-purple-400">SIGN IN</button>
+                </p>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile-section" class="w-full max-w-2xl hidden animate-in">
+            <div class="glass-card p-14 rounded-[64px] relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-10">
+                    <button onclick="handleLogout()" class="group flex items-center gap-3 px-8 py-4 rounded-2xl bg-white/5 text-white hover:bg-red-500 transition-all duration-500 font-black text-xs tracking-widest shadow-lg">
+                        <span>TERMINATE SESSION</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H7"/></svg>
+                    </button>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-14 items-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 rounded-[54px] bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-7xl font-black text-white shadow-[0_0_60px_rgba(99,102,241,0.3)] border-[12px] border-[#111118]" id="user-avatar">
+                            J
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-emerald-500 border-[6px] border-[#111118] rounded-full shadow-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"/></svg>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left flex-1">
+                        <span id="profile-role" class="px-6 py-2.5 rounded-2xl bg-indigo-500/10 text-indigo-400 text-xs font-black uppercase tracking-[0.2em] inline-block mb-6 border border-indigo-500/20">VERIFIED USER</span>
+                        <h2 id="profile-name" class="text-7xl font-black text-white tracking-tighter mb-4 leading-none">John Doe</h2>
+                        <p id="profile-email" class="text-slate-400 font-bold text-2xl tracking-tight">john@example.com</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
+                    <div class="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 group hover:border-indigo-500/30 hover:bg-white/[0.04] transition-all duration-700 shadow-inner">
+                        <p class="text-[10px] text-slate-500 uppercase font-black mb-4 tracking-[0.3em]">System Hex ID</p>
+                        <p id="profile-id" class="text-white font-mono font-bold text-sm truncate opacity-80 group-hover:opacity-100">---</p>
+                    </div>
+                    <div class="p-10 rounded-[40px] bg-white/[0.02] border border-white/5 group hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-700 shadow-inner">
+                        <p class="text-[10px] text-slate-500 uppercase font-black mb-4 tracking-[0.3em]">Encrypted Uplink</p>
+                        <p class="text-emerald-400 font-black flex items-center gap-4 text-xl uppercase tracking-tighter">
+                            Secure <span class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Global Loader -->
+    <div id="loader" class="fixed inset-0 bg-[#0a0a0c]/90 backdrop-blur-3xl z-[200] flex items-center justify-center hidden">
+        <div class="flex flex-col items-center gap-8">
+            <div class="relative">
+                <div class="w-24 h-24 border-[6px] border-white/5 border-t-indigo-500 rounded-full animate-spin"></div>
+                <div class="absolute inset-0 w-24 h-24 border-[6px] border-transparent border-b-purple-500 rounded-full animate-spin" style="animation-duration: 1.2s; animation-direction: reverse;"></div>
+            </div>
+            <p class="text-white font-black tracking-[0.5em] uppercase text-[10px] animate-pulse">Initializing Neural Link</p>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>

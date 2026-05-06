@@ -2,7 +2,8 @@
 
 NexusAuth is a cutting-edge, high-performance authentication interface built with **Vanilla HTML, Tailwind CSS, and Modular JavaScript**. It features a stunning "Midnight Obsidian" dark theme with advanced glassmorphism, animated background elements, and a robust security architecture.
 
-🚀 **Live Demo:** [View Deployment](https://authentication-app-delta-seven.vercel.app/)
+🚀 **Live Deployment:** [authentication-app-babita.vercel.app](https://authentication-app-babita.vercel.app/)
+📊 **Vercel Project:** [View Dashboard](https://vercel.com/babita1947s-projects/authentication-app)
 
 ---
 
@@ -58,5 +59,4 @@ The app uses **Bearer Token** authentication. Tokens are stored securely in `loc
 
 ---
 
-Built with 💜 by [Your Name]
-# Authentication-App
+Built with 💜 by [Babita Kumari]
